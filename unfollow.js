@@ -3,7 +3,6 @@
 
     let totalUnfollowed = 0;
 
-    // Fonction pour scroller jusqu'en bas afin de charger tous les abonnements
     async function scrollToLoadAllFollowers() {
         console.log("Chargement des abonnements...");
         let previousHeight = 0;
@@ -25,7 +24,6 @@
         console.log("Tous les abonnements ont été chargés.");
     }
 
-    // Fonction pour unfollow chaque profil
     async function unfollowProfiles() {
         let profiles = document.querySelectorAll('button[aria-label^="Ne plus suivre"]');
         
@@ -33,7 +31,7 @@
             btn.click();
             console.log(`Unfollowed: ${btn.getAttribute('aria-label')}`);
             totalUnfollowed++;
-            await new Promise(r => setTimeout(r, 1000)); // Pause pour éviter les détections
+            await new Promise(r => setTimeout(r, 1000)); 
         }
     }
 
